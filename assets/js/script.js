@@ -221,7 +221,12 @@ function createNowEl() {
 
   $("#today").append(
     $('<h3 id="location-now">').text(
-      searchLocation + ", "+weatherData[0].country + " - " + weatherData[0].date + " "
+      searchLocation +
+        ", " +
+        weatherData[0].country +
+        " - " +
+        weatherData[0].date +
+        " "
     )
   );
   $("#location-now").append(icon);

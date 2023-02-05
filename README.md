@@ -6,6 +6,8 @@ The task for this assignment requires to create an app that allows users to see 
 The main purpose is to create a weather dashboard with form inputs.
 When a user searches for a city they are presented with current and future conditions for that city and that city is added to the search history.
 
+The app is created using the <a href="https://openweathermap.org/forecast5">5 Day Weather Forecast API</a> to retrieve weather data for cities. 
+
 When a user views the current weather conditions for that city they are presented with:
 - The city name
 - The date
