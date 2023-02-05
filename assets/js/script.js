@@ -86,7 +86,7 @@ createHistButtons();
 // When a user searches for a city they are presented with current and future conditions for that city and that city is added to the search history.
 function createContent(text) {
   queryURL1 =
-    "http://api.openweathermap.org/geo/1.0/direct?q=" +
+    "https://api.openweathermap.org/geo/1.0/direct?q=" +
     text +
     "£&limit=5&appid=" +
     APIKey;
