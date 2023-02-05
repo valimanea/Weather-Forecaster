@@ -28,7 +28,7 @@ var searchDates = [];
 var searchLocation;
 var weatherData = {};
 var days = [0, 1, 2, 3, 4, 5];
-var info = ["date", "iconUrl", "temp", "windSpd", "humidity"];
+var info = ["date", "iconUrl", "temp", "windSpd", "humidity", "country"];
 var obj = {};
 
 for (var i of days) {
@@ -101,6 +101,7 @@ function createContent(text) {
     .then(function (response) {
       if (Object.keys(response).length) {
         searchLocation = response[0].name;
+        weatherData[0].country = response[0].country;
         var allDiff = 1;
         if (searchList.length != 0) {
           for (var i = 0; i < searchList.length; i++) {
@@ -201,7 +202,7 @@ function readFromStorage() {
 
 function returnIconSrc(listIndex) {
   var iconCode = listIndex.weather[0].icon;
-  var iconUrl = "http://openweathermap.org/img/w/" + iconCode + ".png";
+  var iconUrl = "https://openweathermap.org/img/w/" + iconCode + ".png";
   return iconUrl;
 }
 
@@ -220,7 +221,7 @@ function createNowEl() {
 
   $("#today").append(
     $('<h3 id="location-now">').text(
-      searchLocation + " " + weatherData[0].date + " "
+      searchLocation + ", "+weatherData[0].country + " - " + weatherData[0].date + " "
     )
   );
   $("#location-now").append(icon);
